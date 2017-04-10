@@ -1,0 +1,26 @@
+Team's Name: BU-NKU (Namık Kemal University & Boğaziçi University joint team)
+Team Members: Dr. Heysem Kaya, Mr. Furkan Gürpınar and Dr. Albert Ali Salah (advisor)
+The overall method: 
+The system uses the predictions of personality traits and interview variable from our proposed system to the first stage (which ranked the first). 
+The aim here is to meaningfully map the trait predictions to the interview scores. To this end, we have tried several systems and found that most effective and compact way 
+for explanation is binarizing the predicted trait scores thresholded by their training set means (0= lower, 1=higher than or equal to corresponding trait mean) and
+ similarly thresholding the interview variable at 0.5 (the predicted training set mean is also close to this value).
+
+We then learned a decision tree model using the predicted-discretized personality scores of the challenge training set and mapping them to "ground truth" interview annotations.
+The method is applied on the validation set with "predicted" interview annotations, giving a classification accuracy of 94.2% for binarized interview variable.
+The reason of using a decision tree is simply becuase the model is self-explanatory: we can see/trace the decision given the input variables.
+The learned decision tree can be found in (image.jpg), the tree is converted into "if then" rules tracing from root to the leaf and the reasons of decision are given in the following format:
+if invite decision is "NO" 
+--> desc= 'This [gentleman/lady] is not invited due to [his/her] low apparent {list of low scores on the trace}' [optional depending on path:' , although high {list of high scores on the trace} is observed.'];
+if invite decision is "YES"
+--> desc= 'This [gentleman/lady] is invited due to [his/her] high apparent {list of high scores on the trace}' [optional depending on path:', although low {list of low scores on the trace} is observed.'];
+    
+We also check whether the high/low score of each dimension has the same sign with that of the model trained on facil features. After this check we include an extra information for the leading personality dimension that helped admittance  for / caused rejection from interview.
+
+example 1: (simc6hmrUOE.002.mp4) This lady is not invited due to her low apparent agreeableness (the impression of which is gained primarily from facial expressions), neuroticism, conscientiousness, extroversion.
+example 2: (syJo_sm8IqQ.001.mp4) This lady is invited for an interview due to her high apparent agreeableness (the impression of which is modulated by voice), and neuroticism impression.
+
+For gender prediction, we have manually annotated 4000 development set images (~3000 from training and 1000 validaiton set), then trained a gender prediction model based on the audio and video features 
+used in the apparent personality trait recognition. We fused the scores of audio and video model obtaining a validation set accuracy of 94.33%. We then used all annotated data for training 
+with the optimized hyper-parameters and casted predictions on the remaning 4000 development set instances. The annotated/predicted gender labels will be shared along with the codes.
+

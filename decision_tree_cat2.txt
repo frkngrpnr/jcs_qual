@@ -1,0 +1,7 @@
+In our description system we use, final personality predictions from the quantitative part (big-5) 
+
+For ease of interpretability, the scores are binarized based on the training set mean value of each predictor. 
+Thus, for each predictor 0 means lower than corresponding mean value, 1: higher than or equal to corresponding mean value
+The decision three constructed by MATLAB
+
+
