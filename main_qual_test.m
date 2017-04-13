@@ -19,6 +19,7 @@ opts.alignment_path = [opts.base_path bss 'data' bss 'videos' bss 'aligned'];
 opts.frame_features_path = [opts.base_path bss 'data' bss 'features' bss 'frame'];
 opts.output_path= [opts.base_path opts.bss 'data' opts.bss 'output'] ;
 opts.write_preds=1; % writes the predictions to predictions.pkl over a csv file
+opts.write_imgs=1;
 % setting this to 1 requires that python command is working !!!
 %load('gt_train_struct')
 %load('gt_trval')
@@ -70,6 +71,9 @@ rf_score_fusion
 
 explanation_model_test % model a tree using the system from quantitative part
 
+if (opts.write_imgs) % if the prediction system is changed then renew explanatory images
+   saveimg  
+end
 % We are done! Time to write predictions in submission format
 if (opts.write_preds)
     prepare_submission_qual(scores_final_elm_test,explanations_test,dimensions,test_filenames)

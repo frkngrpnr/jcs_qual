@@ -60,6 +60,5 @@ yp=predict(tree_cat2,pers_feats_cat2_test);
 view(tree_cat2)
 view(tree_cat2,'mode','graph');
 
-
-explanations_test  = exp_big5(scores_final_elm_test(:,trait_ids),scores_final_elm_test(:,4), pers_feats_mean,gender_labels_test,pers_feats_cat2_test_face);
+explanations_test  = exp_big5_v2(scores_final_elm_test(:,trait_ids),scores_final_elm_test(:,4), pers_feats_mean,gender_labels_test,pers_feats_cat2_test_face);
 

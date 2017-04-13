@@ -36,7 +36,7 @@ for i=1:N
     p_extr_face= pers_emo_feats_cat2_test_face(i,3);
     p_neur_face= pers_emo_feats_cat2_test_face(i,4);
     p_open_face= pers_emo_feats_cat2_test_face(i,5);
-    
+
     if (p_agre==p_agre_face) % if the score is the same this is primarily due to facial features
          desc_agre=' (the impression of which is gained primarily from facial expressions),';
        else
@@ -82,30 +82,30 @@ for i=1:N
             model_decision=2;
             desc= ['This ' gender{gender_pred(i)} ' is invited for an interview due to ' accusative{gender_pred(i)} ' high apparent agreeableness' desc_agre ' and extroversion impression.'];
         else
-            desc= ['This ' gender{gender_pred(i)} ' is not invited due to ' accusative{gender_pred(i)} ' low apparent  neuroticism' desc_neur ', conscientiousness, and extroversion; although the vlog exhibits high agreeableness.'];
+            desc= ['This ' gender{gender_pred(i)} ' is not invited due to ' accusative{gender_pred(i)} ' low apparent  neuroticism' desc_neur ', conscientiousness, and extroversion, although the vlog exhibits high agreeableness.'];
         end
     else % low p_agre
         if (p_neur)
            if (p_cons) 
                if (p_extr)
                    model_decision=2;
-                   desc= ['This ' gender{gender_pred(i)} ' is invited for an interview due to ' accusative{gender_pred(i)} ' high apparent neuroticism ' desc_neur ' conscientiousness and extroversion; despite low agreeableness impression.'];
+                   desc= ['This ' gender{gender_pred(i)} ' is invited for an interview due to ' accusative{gender_pred(i)} ' high apparent neuroticism ' desc_neur ' conscientiousness and extroversion, despite low agreeableness impression.'];
                else
                    if (p_open)
-                       desc= ['This ' gender{gender_pred(i)} ' is not invited for an interview due to ' accusative{gender_pred(i)} ' low apparent  agreeableness ' desc_agre ' and extroversion impression; although predicted scores for neuroticism, conscientiousness and openness were high. ' ...
+                       desc= ['This ' gender{gender_pred(i)} ' is not invited for an interview due to ' accusative{gender_pred(i)} ' low apparent  agreeableness ' desc_agre ' and extroversion impression, although predicted scores for neuroticism, conscientiousness and openness were high. ' ...
                        'It is likely that this trait combination (with low agreeableness, low extroversion, and high openness scores) does not leave a genuine impression for job candidacy.']; 
                    else
                        model_decision=2;
-                       desc= ['This ' gender{gender_pred(i)} ' is invited for an interview due to ' accusative{gender_pred(i)} ' high apparent neuroticism ' desc_neur ', conscientiousness;  despite low agreeableness, openness and extroversion.'];
+                       desc= ['This ' gender{gender_pred(i)} ' is invited for an interview due to ' accusative{gender_pred(i)} ' high apparent neuroticism ' desc_neur ', conscientiousness,  despite low agreeableness, openness and extroversion.'];
                    end
                end
            else
-                desc= ['This ' gender{gender_pred(i)} ' is not invited due to ' accusative{gender_pred(i)} ' low apparent agreeableness' desc_agre ' and conscientiousness; although high neuroticism is observed.'];
+                desc= ['This ' gender{gender_pred(i)} ' is not invited due to ' accusative{gender_pred(i)} ' low apparent agreeableness' desc_agre ' and conscientiousness, although high neuroticism is observed.'];
            end
         else
             if (p_cons && p_extr && p_open)
                  model_decision=2;
-                 desc= ['This ' gender{gender_pred(i)} ' is invited for an interview due to ' accusative{gender_pred(i)} ' high apparent conscientiousness' desc_cons ', extroversion and openness; despite low agreeableness and neuroticism.'];
+                 desc= ['This ' gender{gender_pred(i)} ' is invited for an interview due to ' accusative{gender_pred(i)} ' high apparent conscientiousness' desc_cons ', extroversion and openness, despite low agreeableness and neuroticism.'];
             else
                  desc= ['This ' gender{gender_pred(i)} ' is not invited due to ' accusative{gender_pred(i)} ' low apparent agreeableness' desc_agre ' neuroticism'];
                  if (~p_cons)

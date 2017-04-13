@@ -1,7 +1,7 @@
 This folder contains the code for our entry in the Apparent Personality Analysis and Job Candidate Screening Coopetition Workshop @CVPR 2016.
 
 %% Notes
-0) There are two main_qual*.m files: main_qual_val.m and main_qual_test.m to reproduce validation and test predictions, respectively.
+0) To reproduce the test set results, run main_qual_test.m (you may wish to un/set some options for feature extraction/model learning/modality fusion and writing the predictions).
 
 1) This code runs in MATLAB, and tested in a Linux system, if you want to run it on a Windows-based system instead, please change line 12 of main_qual_*.m accordingly, i.e. bss = '\';
 
@@ -20,8 +20,10 @@ For face alignment, you need the IntraFace library. For feature extraction, you 
 If you use this fine-tuned network, please also cite:
 H. Kaya, F. Gürpınar, A. A. Salah, "Video-Based Emotion Recognition in the Wild using Deep Transfer Learning and Score Fusion", Image and Vision Computing, Available online 4 February 2017, http://dx.doi.org/10.1016/j.imavis.2017.01.012.
 
-6) If the corresponding flag is set, the test set predictions will be written to prediction.pkl and the explanations will be written to description.pkl.
- and predictions.csv that we create from final predicitons. 
+6) If the corresponding flag is set, the test set predictions will be written to prediction.pkl and the explanations will be written to description.pkl, both of which are read from predictions.csv that we create from final predicitons. 
+
+7) The descriptive images that show the faces and the mean normalized (pedicted) scores can be reproduced using the given codes (using saveimg routine) or alternatively they can be accessed from https://www.dropbox.com/s/e4wkwudijuyjy81/testimages.zip?dl=0 
+
 
 For any queries email: kaya.heysem@gmail.com
 Happy hacking!
