@@ -1,4 +1,4 @@
-This folder contains the code for our entry in the Apparent Personality Analysis and Job Candidate Screening Coopetition Workshop @CVPR 2016.
+This folder contains the code for our entry in the Apparent Personality Analysis and Job Candidate Screening Coopetition Workshop @CVPR 2017.
 
 %% Notes
 0) To reproduce the test set results, run main_qual_test.m (you may wish to un/set some options for feature extraction/model learning/modality fusion and writing the predictions).
