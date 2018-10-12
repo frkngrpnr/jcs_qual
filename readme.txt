@@ -5,8 +5,8 @@ This folder contains the code for our entry in the Apparent Personality Analysis
 
 1) This code runs in MATLAB, and tested in a Linux system, if you want to run it on a Windows-based system instead, please change line 12 of main_qual_*.m accordingly, i.e. bss = '\';
 
-2) Since the features are too big to upload to GitHub, they are placed in a separate (Dropbox) folder. You can find them on the following  link:
- https://www.dropbox.com/sh/ciem9jt79jfbt28/AACg5e1MVQvQa_LjVc3XRcisa?dl=0
+2) Since the features are too big to upload to GitHub, they are placed in a separate folder. You can find them on the following  link:
+ https://drive.google.com/open?id=1RUN5CKh9-jCdjo9yJ1L4BaTpYs7VA4sG
 Please make sure that the .mat files are placed under the path ./data/features/.
 If you use the features in your work, please cite:
 F. Gürpınar, H. Kaya, A.A. Salah, "Multimodal Fusion of Audio, Scene, and Face Features for First Impression Estimation", ChaLearn Joint Contest and Workshop on Multimedia Challenges Beyond Visual Analysis -Collocated with ICPR2016, 2016 
